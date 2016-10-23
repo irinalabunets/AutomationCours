@@ -15,16 +15,16 @@ public class CheeseCake {
         driver.get("http://www.thecheesecakefactory.com/");
 
         driver.findElement(By.id("closeBtn")).click();
-        Thread.sleep(5000);
+        Thread.sleep(1000);
 
         driver.findElement(By.xpath("//a[@href='/menu/']")).click();
-        Thread.sleep(5000);
+        Thread.sleep(1000);
 
         driver.findElement(By.xpath("//a[@href='/menu/desserts/']")).click();
-        Thread.sleep(5000);
+        Thread.sleep(1000);
 
         driver.findElement(By.xpath("//a[@href='/menu/desserts/cheesecakes/']")).click();
-        Thread.sleep(5000);
+        Thread.sleep(1000);
 
         List<WebElement> cheesecakes = driver.findElements(By.xpath("//a[contains(@href,'/menu/desserts/cheesecakes/')]/span[@class='item-title']"));
 
