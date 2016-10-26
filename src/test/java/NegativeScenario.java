@@ -16,5 +16,18 @@ public class NegativeScenario {
         WebElement RegAlert = driver.findElement(By.xpath("//div[@class='reg-alert']/span[contains(text(),'Укажите имя')]"));
 
         System.out.println(RegAlert.getText());
+
+        driver.findElement(By.xpath("//div[@class='reg-alert']//button")).click();
+        //driver.findElement(By.xpath("//div[@class='reg-alert']")).clear();
+        driver.findElement(By.id("reg-firstname")).sendKeys("Irina");
+        driver.findElement(By.id("reg-lastname")).sendKeys("Labunets");
+        driver.findElement(By.id("reg-email")).sendKeys("labunetsiryna@gmail");
+        driver.findElement(By.id("reg-password")).sendKeys("edcvfr789");
+        driver.findElement(By.id("registration-submit")).click();
+        WebElement RegAlertEmail = driver.findElement(By.xpath("//div[@class='reg-alert']/span"));
+
+        System.out.println(RegAlertEmail.getText());
+
     }
 }
+//div[@class='reg-alert']//button
