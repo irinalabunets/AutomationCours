@@ -12,9 +12,11 @@ public class RegistrationTests {
     @Test
     public void errorMessageOnEmptyFormSubmit() {
         RegistrationPage registrationPage = new RegistrationPage();
-        registrationPage.navigatePage();
+        registrationPage.openPage();
         registrationPage.Variable();
         registrationPage.RegistrationFormFillAndSubmit("", "", "", "");
+        registrationPage.ErrorMessageOnEmptyFormSubmit();
+
 
 
     }

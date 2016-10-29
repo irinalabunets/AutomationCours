@@ -2,6 +2,7 @@ package page;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 
 public class RegistrationPage extends BasePage {
 
@@ -35,5 +36,12 @@ public class RegistrationPage extends BasePage {
         emailField.sendKeys(email);
         passwordField.sendKeys(password);
         joinNowButton.click();
+    }
+
+    public void ErrorMessageOnEmptyFormSubmit () {
+
+        WebElement errorMessageBlankRegistration = driver.findElement(By.xpath("//div[@class='reg-alert']/span"));
+        String errorMasege = errorMessageBlankRegistration.getText();
+        Assert.assertEquals("Укажите имя", errorMasege);
     }
 }

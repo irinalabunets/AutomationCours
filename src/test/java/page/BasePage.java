@@ -7,7 +7,7 @@ public class BasePage {
 
     WebDriver driver = new FirefoxDriver();
 
-    public void navigatePage(){
+    public void openPage(){
 
         driver.get("https://www.linkedin.com/");
     }
