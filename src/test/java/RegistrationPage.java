@@ -8,9 +8,17 @@ public class RegistrationPage {
     //System.setProperty("webdriver.gecko.driver", "C:/geckodriver.exe");
     WebDriver driver = new FirefoxDriver();
 
-    private WebElement firstName = driver.findElement(By.id("reg-firstname"));
-    private WebElement lastName = driver.findElement(By.id("reg-lastname"));
-    private WebElement email = driver.findElement(By.id("reg-email"));
-    private WebElement password = driver.findElement(By.id("reg-password"));
-    private WebElement joinNow = driver.findElement(By.id("registration-submit"));
+    private WebElement firstNameField = driver.findElement(By.id("reg-firstname"));
+    private WebElement lastNameField = driver.findElement(By.id("reg-lastname"));
+    private WebElement emailField = driver.findElement(By.id("reg-email"));
+    private WebElement passwordField = driver.findElement(By.id("reg-password"));
+    private WebElement joinNowButton = driver.findElement(By.id("registration-submit"));
+
+    public void RegistrationFormFillAndSubmit(){
+        firstNameField.sendKeys();
+        lastNameField.sendKeys();
+        emailField.sendKeys();
+        passwordField.sendKeys();
+        joinNowButton.click();
+    }
 }
