@@ -17,7 +17,7 @@ public class NegativeScenario {
         WebElement RegAlert = driver.findElement(By.xpath("//div[@class='reg-alert']/span[contains(text(),'Укажите имя')]"));
         String ErrorMasege = RegAlert.getText();
         Assert.assertEquals("Укажите имя", ErrorMasege);
-        
+
 
         driver.findElement(By.xpath("//div[@class='reg-alert']//button")).click();
         //driver.findElement(By.xpath("//div[@class='reg-alert']")).clear();
