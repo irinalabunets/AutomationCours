@@ -17,8 +17,8 @@ public class LoginPage extends BasePage {
     }
 
     public void Authorization (){
-        emeilField.sendKeys();
-        passwordField.sendKeys();
+        emeilField.sendKeys("irina.la@ukr.net");
+        passwordField.sendKeys("edcvfr789");
         singInButton.click();
     }
 }
