@@ -12,4 +12,5 @@ public class RegistrationPage {
     private WebElement lastName = driver.findElement(By.id("reg-lastname"));
     private WebElement email = driver.findElement(By.id("reg-email"));
     private WebElement password = driver.findElement(By.id("reg-password"));
+    private WebElement joinNow = driver.findElement(By.id("registration-submit"));
 }
