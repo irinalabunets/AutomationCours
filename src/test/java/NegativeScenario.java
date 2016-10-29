@@ -30,4 +30,3 @@ public class NegativeScenario {
 
     }
 }
-//div[@class='reg-alert']//button
