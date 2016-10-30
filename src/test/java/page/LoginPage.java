@@ -2,9 +2,11 @@ package page;
 
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class LoginPage extends BasePage {
+    private WebDriver driver;
 
     private WebElement emailField;
     private WebElement passwordField;
@@ -13,6 +15,10 @@ public class LoginPage extends BasePage {
     private WebElement logo;
     private WebElement searchBox;
     private WebElement searchButton;
+
+    public LoginPage(WebDriver driver) {
+        super(driver);
+    }
 
     public void VariableForLogin(){
         emailField = driver.findElement(By.id("login-email"));

@@ -2,7 +2,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import page.LoginPage;
 
-public class AuthorizationSuccessful {
+public class AuthorizationSuccessful extends BaseTest{
 
     @BeforeClass
     public void beforeClass () {
@@ -12,7 +12,7 @@ public class AuthorizationSuccessful {
 
     @Test
     public void Authorization () throws InterruptedException {
-        LoginPage loginPage = new LoginPage();
+        LoginPage loginPage = new LoginPage(getDriver());
         loginPage.openPage();
         loginPage.VariableForLogin();
         loginPage.Authorization("irina.la@ukr.net", "edcvfr789");
