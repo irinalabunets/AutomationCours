@@ -6,6 +6,7 @@ public class RegistrationTests {
 
     @BeforeClass
     public void beforeClass () {
+
         System.setProperty("webdriver.gecko.driver", "C:/geckodriver.exe");
     }
 

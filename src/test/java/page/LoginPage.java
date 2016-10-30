@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 
 public class LoginPage extends BasePage {
 
-    private WebElement emeilField;
+    private WebElement emailField;
     private WebElement passwordField;
     private WebElement singInButton;
 
@@ -15,14 +15,14 @@ public class LoginPage extends BasePage {
     private WebElement searchButton;
 
     public void VariableForLogin(){
-        emeilField = driver.findElement(By.id("login-email"));
+        emailField = driver.findElement(By.id("login-email"));
         passwordField = driver.findElement(By.id("login-password"));
         singInButton = driver.findElement(By.id("login-submit"));
     }
 
-    public void Authorization (){
-        emeilField.sendKeys("irina.la@ukr.net");
-        passwordField.sendKeys("edcvfr789");
+    public void Authorization (String email, String password){
+        emailField.sendKeys(email);
+        passwordField.sendKeys(password);
         singInButton.click();
     }
 
