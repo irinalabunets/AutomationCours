@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
-public class LoginRegistrationPage {
+public class LoginRegistrationPage extends BasePage{
 
     private WebDriver driver;
 
@@ -26,7 +26,7 @@ public class LoginRegistrationPage {
     }
 
 
-    public void listOfVariableToLoginRegistration() {
+    public void listOfElementsToLoginRegistration() {
 
         firstNameField = driver.findElement(By.id("reg-firstname"));
         lastNameField = driver.findElement(By.id("reg-lastname"));
