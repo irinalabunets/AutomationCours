@@ -1,0 +1,67 @@
+package page;
+
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
+
+public class LoginRegistrationPage {
+
+    private WebDriver driver;
+
+    private WebElement firstNameField;
+    private WebElement lastNameField;
+    private WebElement emailField;
+    private WebElement passwordField;
+    private WebElement joinNowButton;
+    private WebElement errorMessageBox;
+
+    private WebElement loginEmailField;
+    private WebElement loginPasswordField;
+    private WebElement singInButton;
+
+    public LoginRegistrationPage(WebDriver driver) {
+        super(driver);
+    }
+
+
+    public void listOfVariableToLoginRegistration() {
+
+        firstNameField = driver.findElement(By.id("reg-firstname"));
+        lastNameField = driver.findElement(By.id("reg-lastname"));
+        emailField = driver.findElement(By.id("reg-email"));
+        passwordField = driver.findElement(By.id("reg-password"));
+        joinNowButton = driver.findElement(By.id("registration-submit"));
+
+        loginEmailField = driver.findElement(By.id("login-email"));
+        loginPasswordField = driver.findElement(By.id("login-password"));
+        singInButton = driver.findElement(By.id("login-submit"));
+
+    }
+
+    public void loginFormFillAndSubmit(String loginEmail, String loginPassword) {
+
+        loginEmailField.sendKeys(loginEmail);
+        loginPasswordField.sendKeys(loginPassword);
+        singInButton.click();
+    }
+
+    public void registrationFormFillAndSubmit(String firstName, String lastName, String email, String password) {
+
+        firstNameField.sendKeys(firstName);
+        lastNameField.sendKeys(lastName);
+        emailField.sendKeys(email);
+        passwordField.sendKeys(password);
+        joinNowButton.click();
+    }
+
+
+
+    public String getErrorMessageText (){
+        errorMessageBox = driver.findElement(By.className("alert-content"));
+        return errorMessageBox.getText();
+    }
+
+
+}
