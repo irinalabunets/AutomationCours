@@ -37,4 +37,4 @@ public class HomePage extends BasePage{
         return homeMenuLink.isDisplayed();
     }
 }
-}
+
