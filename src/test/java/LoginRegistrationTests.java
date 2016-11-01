@@ -11,9 +11,19 @@ public class LoginRegistrationTests extends BaseTest{
         registrationPage.openPage();
         registrationPage.listOfElementsToLoginRegistration();
         registrationPage.registrationFormFillAndSubmit("", "", "", "");
-        //registrationPage.ErrorMessageOnEmptyFormSubmit();
 
         Assert.assertEquals(registrationPage.getErrorMessageText(), "Укажите имя", "Expected error massage");
+
+    }
+
+    @Test
+    public void errorMessageOnFillFormBadEmailSubmit (){
+        LoginRegistrationPage registrationPage = new LoginRegistrationPage(getDriver());
+        registrationPage.openPage();
+        registrationPage.listOfElementsToLoginRegistration();
+        registrationPage.registrationFormFillAndSubmit("irina", "labunets", "labunetsirina@gmail", "edcvfr789");
+
+        Assert.assertEquals(registrationPage.getErrorMessageText(), "Укажите действительный адрес электронной почты", "Expected error massage");
 
     }
 

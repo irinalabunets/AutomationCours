@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c24df53b-0203-4b8b-98e4-c54ebdcf3044" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/BaseTest.java" afterPath="$PROJECT_DIR$/src/test/java/BaseTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/LoginRegistrationTests.java" afterPath="$PROJECT_DIR$/src/test/java/LoginRegistrationTests.java" />
     </list>
     <ignored path="AutomationCours.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,7 +41,7 @@
         <entry file="file://$PROJECT_DIR$/src/test/java/page/BasePage.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+              <caret line="13" column="45" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="45" />
               <folding>
                 <element signature="e#149#150#0" expanded="true" />
                 <element signature="e#185#186#0" expanded="true" />
@@ -102,8 +103,8 @@
       <file leaf-file-name="LoginRegistrationTests.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/LoginRegistrationTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6219512">
-              <caret line="27" column="51" selection-start-line="27" selection-start-column="51" selection-end-line="27" selection-end-column="51" />
+            <state vertical-scroll-proportion="0.57588077">
+              <caret line="25" column="115" selection-start-line="25" selection-start-column="115" selection-end-line="25" selection-end-column="115" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -705,12 +706,12 @@
       <created>1477998737969</created>
       <option name="number" value="Default" />
       <updated>1477998737969</updated>
-      <workItem from="1477998739223" duration="1939000" />
+      <workItem from="1477998739223" duration="3345000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1939000" />
+    <option name="totallyTimeSpent" value="3345000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1432" y="-8" width="1456" height="876" extended-state="6" />
@@ -780,19 +781,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/page/BasePage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding>
-            <element signature="e#149#150#0" expanded="true" />
-            <element signature="e#185#186#0" expanded="true" />
-            <element signature="e#214#215#0" expanded="true" />
-            <element signature="e#269#270#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/page/LoginRegistrationPage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -835,10 +823,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/page/BasePage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="45" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="45" />
+          <folding>
+            <element signature="e#149#150#0" expanded="true" />
+            <element signature="e#185#186#0" expanded="true" />
+            <element signature="e#214#215#0" expanded="true" />
+            <element signature="e#269#270#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/LoginRegistrationTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6219512">
-          <caret line="27" column="51" selection-start-line="27" selection-start-column="51" selection-end-line="27" selection-end-column="51" />
+        <state vertical-scroll-proportion="0.57588077">
+          <caret line="25" column="115" selection-start-line="25" selection-start-column="115" selection-end-line="25" selection-end-column="115" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
