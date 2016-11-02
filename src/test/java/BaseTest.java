@@ -11,20 +11,16 @@ public class BaseTest {
         return driver;
     }
 
-    public WebDriver initDriver() {
-        return new FirefoxDriver();
-    }
-
     @BeforeClass
     public void setUp () {
         System.setProperty("webdriver.gecko.driver", "C:/geckodriver.exe");
-        initDriver();
+        driver = new FirefoxDriver();
     }
 
-    @AfterClass
-    public void tearDown() {
-        driver.quit();
-    }
+    //@AfterClass
+    //public void tearDown() {
+       // driver.quit();
+   // }
 
 }
 

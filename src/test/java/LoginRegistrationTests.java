@@ -12,7 +12,7 @@ public class LoginRegistrationTests extends BaseTest{
         registrationPage.listOfElementsToLoginRegistration();
         registrationPage.registrationFormFillAndSubmit("", "", "", "");
 
-        Assert.assertEquals(registrationPage.getErrorMessageText(), "Укажите имя", "Expected error massage");
+        Assert.assertEquals(registrationPage.getErrorMessageText(), "Укажите имя", "Expected error message was not found on page");
 
     }
 
@@ -23,7 +23,7 @@ public class LoginRegistrationTests extends BaseTest{
         registrationPage.listOfElementsToLoginRegistration();
         registrationPage.registrationFormFillAndSubmit("irina", "labunets", "labunetsirina@gmail", "edcvfr789");
 
-        Assert.assertEquals(registrationPage.getErrorMessageText(), "Укажите действительный адрес электронной почты", "Expected error massage");
+        Assert.assertEquals(registrationPage.getErrorMessageText(), "Укажите действительный адрес электронной почты", "Expected error message was not found on page");
 
     }
 

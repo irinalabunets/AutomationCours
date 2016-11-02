@@ -1,14 +1,9 @@
 package page;
-
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.testng.Assert;
 
 public class LoginRegistrationPage extends BasePage{
-
-    private WebDriver driver;
 
     private WebElement firstNameField;
     private WebElement lastNameField;
@@ -25,7 +20,6 @@ public class LoginRegistrationPage extends BasePage{
         super(driver);
     }
 
-
     public void listOfElementsToLoginRegistration() {
 
         firstNameField = driver.findElement(By.id("reg-firstname"));
@@ -37,7 +31,6 @@ public class LoginRegistrationPage extends BasePage{
         loginEmailField = driver.findElement(By.id("login-email"));
         loginPasswordField = driver.findElement(By.id("login-password"));
         singInButton = driver.findElement(By.id("login-submit"));
-
     }
 
     public void loginFormFillAndSubmit(String loginEmail, String loginPassword) {
@@ -55,8 +48,6 @@ public class LoginRegistrationPage extends BasePage{
         passwordField.sendKeys(password);
         joinNowButton.click();
     }
-
-
 
     public String getErrorMessageText (){
         errorMessageBox = driver.findElement(By.className("alert-content"));
