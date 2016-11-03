@@ -12,6 +12,7 @@ public class SearchResultTest extends BaseTest{
         loginRegistrationPage.openPage();
         loginRegistrationPage.listOfElementsToLoginRegistration();
         loginRegistrationPage.loginFormFillAndSubmit("irina.la@ukr.net", "edcvfr789");
+
         HomePage homePage = new HomePage(getDriver());
         homePage.listOfElementsToHomePage();
         Assert.assertTrue(homePage.isPageLoaded());
