@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
+import static java.lang.Thread.sleep;
+
 public class SearchPage extends BasePage{
 
     private WebElement advancedPeopleSearchBlock;
@@ -25,8 +27,12 @@ public class SearchPage extends BasePage{
     }
 
     public void listOfElementsToSearch () {
-
-        advancedPeopleSearchBlock = driver.findElement(By.id("advas"));
+        try {
+            sleep (5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        advancedPeopleSearchBlock = driver.findElement(By.xpath("//div[@id='advs']/h3"));
         keywordsField = driver.findElement(By.id("advs-keywords"));
         firstNameField = driver.findElement(By.id("advs-firstName"));
         lastNameField = driver.findElement(By.id("advs-lastName"));
@@ -49,5 +55,5 @@ public class SearchPage extends BasePage{
         searchButton.click();
     }
 
-    
+
 }
