@@ -21,6 +21,7 @@ public class SearchPage extends BasePage{
     private WebElement searchButton;
     private WebElement resetButton;
     private List<WebElement> searchResult;
+    private List<WebElement> descriptionOfSearchResult;
 
     public SearchPage(WebDriver driver) {
         super(driver);
@@ -43,6 +44,7 @@ public class SearchPage extends BasePage{
         searchButton = driver.findElement(By.name("submit"));
         resetButton = driver.findElement(By.xpath("//div[@class='form-controls']/input[@type='reset']"));
         searchResult = driver.findElements(By.cssSelector(".mod.result.people"));
+        descriptionOfSearchResult = driver.findElements(By.xpath("//ol[@id='results']/li[contains(@class,'people')]//div[@class='description']/b"));
     }
 
     public boolean isSearchPageLoaded() {
@@ -61,10 +63,10 @@ public class SearchPage extends BasePage{
 
     public void varificationThatSearchWorldAtTheList (){
 
-      List <WebElement> descriptionOfSearchResult = driver.findElements(By.xpath("//ol[@id='results']/li[contains(@class,'people')]//div[@class='description']/b"));
-        System.out.println (descriptionOfSearchResult.size() + "title:");
         for(int i=0; i<descriptionOfSearchResult.size(); i++){
-            System.out.println(i+1+"."+descriptionOfSearchResult.get(i).getText());
+            String title;
+            title = (i+1+"."+descriptionOfSearchResult.get(i).getText());
+
         }
     }
 

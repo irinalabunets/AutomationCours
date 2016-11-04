@@ -24,5 +24,7 @@ public class SearchResultTest extends BaseTest{
         searchPage.searchByKeywordAndSubmit("HR");
         searchPage.isListOfSearchResultLoaded();
         searchPage.varificationThatSearchWorldAtTheList();
+
+
     }
 }
