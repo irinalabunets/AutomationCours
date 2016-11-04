@@ -22,5 +22,7 @@ public class SearchResultTest extends BaseTest{
         searchPage.listOfElementsToSearch();
         Assert.assertTrue(searchPage.isSearchPageLoaded());
         searchPage.searchByKeywordAndSubmit("HR");
+        searchPage.isListOfSearchResultLoaded();
+        searchPage.varificationThatSearchWorldAtTheList();
     }
 }

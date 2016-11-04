@@ -55,5 +55,19 @@ public class SearchPage extends BasePage{
         searchButton.click();
     }
 
+    public boolean isListOfSearchResultLoaded () {
+        return searchResult.size()>=10;
+    }
+
+    public void varificationThatSearchWorldAtTheList (){
+
+      List <WebElement> descriptionOfSearchResult = driver.findElements(By.xpath("//ol[@id='results']/li[contains(@class,'people')]//div[@class='description']/b"));
+        System.out.println (descriptionOfSearchResult.size() + "title:");
+        for(int i=0; i<descriptionOfSearchResult.size(); i++){
+            System.out.println(i+1+"."+descriptionOfSearchResult.get(i).getText());
+        }
+    }
+
+
 
 }
