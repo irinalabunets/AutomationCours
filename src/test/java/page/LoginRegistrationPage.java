@@ -40,6 +40,12 @@ public class LoginRegistrationPage extends BasePage{
     }
 
 
+    /**
+     * Method for authorization at the linkedin
+     * @param loginEmail user login for authorization at linkedin
+     * @param loginPassword user password for authorization at linkedin
+     * @return Home page, it is means that user is logged on the linkedin
+     */
     public HomePage loginFormFillAndSubmit(String loginEmail, String loginPassword) {
 
         loginEmailField.sendKeys(loginEmail);
@@ -48,6 +54,13 @@ public class LoginRegistrationPage extends BasePage{
         return new HomePage(driver);
     }
 
+    /**
+     * Method for registration at the linkedin
+     * @param firstName user name
+     * @param lastName user last name
+     * @param email user email
+     * @param password user password
+     */
     public void registrationFormFillAndSubmit(String firstName, String lastName, String email, String password) {
 
         firstNameField.sendKeys(firstName);
@@ -57,6 +70,10 @@ public class LoginRegistrationPage extends BasePage{
         joinNowButton.click();
     }
 
+    /**
+     * Get text from error box
+     * @return String from error box
+     */
     public String getErrorMessageText (){
         return errorMessageBox.getText();
     }

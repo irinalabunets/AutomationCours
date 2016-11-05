@@ -6,6 +6,9 @@ import page.SearchPage;
 
 public class SearchResultTest extends BaseTest{
 
+    /**
+     * Search by keyword HR
+     */
     @Test
     public void searchForKeywordHR () {
         LoginRegistrationPage loginRegistrationPage = new LoginRegistrationPage(getDriver());

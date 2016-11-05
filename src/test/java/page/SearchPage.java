@@ -26,10 +26,18 @@ public class SearchPage extends BasePage{
     }
 
 
+    /**
+     * Check that search page is loaded
+     * @return Advanced people search
+     */
     public boolean isSearchPageLoaded() {
         return waitForElementDisplayed (advancedPeopleSearchBlock, 5).isDisplayed();
     }
 
+    /**
+     * Enter search word
+     * @param keyword String search word
+     */
     public void searchByKeywordAndSubmit (String keyword) {
 
         keywordsField.sendKeys(keyword);
