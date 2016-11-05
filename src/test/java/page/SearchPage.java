@@ -37,18 +37,18 @@ public class SearchPage extends BasePage{
     }
 
     public boolean isListOfSearchResultLoaded () {
-        return searchResult.size()>=10;
+        //waitForListOfElementsDisplayed(searchResult, 5);
+        if (searchResult.size()==10) {
+            return true;
+        } else return false;
     }
 
-    public void varificationThatSearchWorldAtTheList (){
+    public String varificationThatSearchWorldAtTheList (){
 
         for(int i=0; i<descriptionOfSearchResult.size(); i++){
-            String title;
-            title = (i+1+"."+descriptionOfSearchResult.get(i).getText());
-
+            System.out.println (i+1+ descriptionOfSearchResult.get(i).getText());
+            return descriptionOfSearchResult.get(i).getText();
         }
+        return null;
     }
-
-
-
 }

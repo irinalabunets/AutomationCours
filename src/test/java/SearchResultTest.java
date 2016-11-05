@@ -14,11 +14,12 @@ public class SearchResultTest extends BaseTest{
 
         SearchPage searchPage = homePage.clickForAdvansedButton();
         Assert.assertTrue(searchPage.isSearchPageLoaded());
-
         searchPage.searchByKeywordAndSubmit("HR");
         //Assert.assertTrue(searchPage.isListOfSearchResultLoaded());
+
         searchPage.isListOfSearchResultLoaded();
-        searchPage.varificationThatSearchWorldAtTheList();
+        //searchPage.varificationThatSearchWorldAtTheList();
+        Assert.assertEquals(searchPage.varificationThatSearchWorldAtTheList(),"HR", "Expected that search word was not found on page");
 
 
     }

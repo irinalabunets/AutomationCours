@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.List;
+
 
 public class BasePage {
     protected WebDriver driver;
@@ -39,6 +41,11 @@ public class BasePage {
 
     public WebElement waitForElementDisplayed (WebElement element) {
         return waitForElementDisplayed (element, 10);
+    }
+
+    public WebElement waitForListOfElementsDisplayed (List<WebElement> element, int timeout) {
+        WebDriverWait wait = new WebDriverWait(driver, timeout);
+        return wait.until(ExpectedConditions.visibilityOf((WebElement) element));
     }
 
 }
