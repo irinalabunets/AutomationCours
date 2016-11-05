@@ -1,36 +1,31 @@
 package page;
 
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import static java.lang.Thread.sleep;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class HomePage extends BasePage{
 
+    @FindBy (xpath = "//div[@id='main-site-nav']//a[@class='nav-link' and @href='/home?trk=nav_responsive_tab_home']")
     private WebElement homeMenuLink;
+    @FindBy (id = "advanced-search")
     private WebElement advansedButton;
 
     public HomePage(WebDriver driver) {
         super(driver);
+        PageFactory.initElements(driver, this);
     }
 
-    public void listOfElementsToHomePage () {
-        try {
-            sleep (5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        homeMenuLink = driver.findElement(By.xpath("//div[@id='main-site-nav']//a[@class='nav-link' and @href='/home?trk=nav_responsive_tab_home']"));
-        advansedButton = driver.findElement(By.id("advanced-search"));
-    }
 
     public boolean isPageLoaded() {
-        return homeMenuLink.isDisplayed();
+        return waitForElementDisplayed(homeMenuLink, 5).isDisplayed();
     }
 
-    public void clickForAdvansedButton () {
+    public SearchPage clickForAdvansedButton () {
         advansedButton.click();
+        return new SearchPage (driver);
     }
 }
 

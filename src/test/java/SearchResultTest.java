@@ -9,19 +9,14 @@ public class SearchResultTest extends BaseTest{
     @Test
     public void searchForKeywordHR () {
         LoginRegistrationPage loginRegistrationPage = new LoginRegistrationPage(getDriver());
-        loginRegistrationPage.openPage();
-        loginRegistrationPage.listOfElementsToLoginRegistration();
-        loginRegistrationPage.loginFormFillAndSubmit("irina.la@ukr.net", "edcvfr789");
-
-        HomePage homePage = new HomePage(getDriver());
-        homePage.listOfElementsToHomePage();
+        HomePage homePage = loginRegistrationPage.loginFormFillAndSubmit("irina.la@ukr.net", "edcvfr789");
         Assert.assertTrue(homePage.isPageLoaded());
-        homePage.clickForAdvansedButton();
 
-        SearchPage searchPage = new SearchPage(getDriver());
-        searchPage.listOfElementsToSearch();
+        SearchPage searchPage = homePage.clickForAdvansedButton();
         Assert.assertTrue(searchPage.isSearchPageLoaded());
+
         searchPage.searchByKeywordAndSubmit("HR");
+        //Assert.assertTrue(searchPage.isListOfSearchResultLoaded());
         searchPage.isListOfSearchResultLoaded();
         searchPage.varificationThatSearchWorldAtTheList();
 

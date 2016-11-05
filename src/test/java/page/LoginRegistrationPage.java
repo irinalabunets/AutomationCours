@@ -1,43 +1,51 @@
 package page;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class LoginRegistrationPage extends BasePage{
 
+    @FindBy(id = "reg-firstname")
     private WebElement firstNameField;
+
+    @FindBy (id = "reg-lastname")
     private WebElement lastNameField;
+
+    @FindBy (id ="reg-email")
     private WebElement emailField;
+
+    @FindBy (id = "reg-password")
     private WebElement passwordField;
+
+    @FindBy (id = "registration-submit")
     private WebElement joinNowButton;
+
+    @FindBy (id = "login-email")
+    private WebElement loginEmailField;
+
+    @FindBy (id = "login-password")
+    private WebElement loginPasswordField;
+
+    @FindBy (id = "login-submit")
+    private WebElement singInButton;
+
+    @FindBy (className = "alert-content")
     private WebElement errorMessageBox;
 
-    private WebElement loginEmailField;
-    private WebElement loginPasswordField;
-    private WebElement singInButton;
 
     public LoginRegistrationPage(WebDriver driver) {
         super(driver);
+        PageFactory.initElements(driver, this);
     }
 
-    public void listOfElementsToLoginRegistration() {
 
-        firstNameField = driver.findElement(By.id("reg-firstname"));
-        lastNameField = driver.findElement(By.id("reg-lastname"));
-        emailField = driver.findElement(By.id("reg-email"));
-        passwordField = driver.findElement(By.id("reg-password"));
-        joinNowButton = driver.findElement(By.id("registration-submit"));
-
-        loginEmailField = driver.findElement(By.id("login-email"));
-        loginPasswordField = driver.findElement(By.id("login-password"));
-        singInButton = driver.findElement(By.id("login-submit"));
-    }
-
-    public void loginFormFillAndSubmit(String loginEmail, String loginPassword) {
+    public HomePage loginFormFillAndSubmit(String loginEmail, String loginPassword) {
 
         loginEmailField.sendKeys(loginEmail);
         loginPasswordField.sendKeys(loginPassword);
         singInButton.click();
+        return new HomePage(driver);
     }
 
     public void registrationFormFillAndSubmit(String firstName, String lastName, String email, String password) {
@@ -50,7 +58,6 @@ public class LoginRegistrationPage extends BasePage{
     }
 
     public String getErrorMessageText (){
-        errorMessageBox = driver.findElement(By.className("alert-content"));
         return errorMessageBox.getText();
     }
 

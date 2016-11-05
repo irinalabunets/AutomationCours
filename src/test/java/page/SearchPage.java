@@ -1,54 +1,33 @@
 package page;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-import static java.lang.Thread.sleep;
-
 public class SearchPage extends BasePage{
 
+    @FindBy (xpath = "//div[@id='advs']/h3")
     private WebElement advancedPeopleSearchBlock;
+    @FindBy (id = "advs-keywords")
     private WebElement keywordsField;
-    private WebElement firstNameField;
-    private WebElement lastNameField;
-    private WebElement titleField;
-    private WebElement companyField;
-    private WebElement schoolField;
-    private WebElement locationField;
+    @FindBy (name = "submit")
     private WebElement searchButton;
-    private WebElement resetButton;
+    @FindBy (css = ".mod.result.people")
     private List<WebElement> searchResult;
+    @FindBy (xpath = "//ol[@id='results']/li[contains(@class,'people')]//div[@class='description']/b")
     private List<WebElement> descriptionOfSearchResult;
 
     public SearchPage(WebDriver driver) {
         super(driver);
+        PageFactory.initElements(driver, this);
     }
 
-    public void listOfElementsToSearch () {
-        try {
-            sleep (5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        advancedPeopleSearchBlock = driver.findElement(By.xpath("//div[@id='advs']/h3"));
-        keywordsField = driver.findElement(By.id("advs-keywords"));
-        firstNameField = driver.findElement(By.id("advs-firstName"));
-        lastNameField = driver.findElement(By.id("advs-lastName"));
-        titleField = driver.findElement(By.id("advs-title"));
-        companyField = driver.findElement(By.id("advs-company"));
-        schoolField = driver.findElement(By.id("advs-school"));
-        locationField = driver.findElement(By.id("advs-locationType"));
-        searchButton = driver.findElement(By.name("submit"));
-        resetButton = driver.findElement(By.xpath("//div[@class='form-controls']/input[@type='reset']"));
-        searchResult = driver.findElements(By.cssSelector(".mod.result.people"));
-        descriptionOfSearchResult = driver.findElements(By.xpath("//ol[@id='results']/li[contains(@class,'people')]//div[@class='description']/b"));
-    }
 
     public boolean isSearchPageLoaded() {
-        return advancedPeopleSearchBlock.isDisplayed();
+        return waitForElementDisplayed (advancedPeopleSearchBlock, 5).isDisplayed();
     }
 
     public void searchByKeywordAndSubmit (String keyword) {

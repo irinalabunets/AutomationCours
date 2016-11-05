@@ -1,6 +1,5 @@
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
 public class BaseTest {
@@ -15,6 +14,8 @@ public class BaseTest {
     public void setUp () {
         System.setProperty("webdriver.gecko.driver", "C:/geckodriver.exe");
         driver = new FirefoxDriver();
+        driver.get("https://www.linkedin.com/");
+        //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
     //@AfterClass

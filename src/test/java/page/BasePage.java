@@ -1,6 +1,9 @@
 package page;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 public class BasePage {
@@ -11,8 +14,31 @@ public class BasePage {
         this.driver = driver;
     }
 
-    public void openPage(){
-        driver.get("https://www.linkedin.com/");
+    public void openPageURL (String URL){
+        driver.get(URL);
+    }
+
+    /**
+     * Gets current Browser URL.
+     * @return String with current URL value.
+     */
+    public String getCurrentURL () {
+       return driver.getCurrentUrl();
+    }
+
+    /**
+     * Explicitly waiting for WedElement visibility.
+     * @param element WebElement that will be explicitly waited.
+     * @param timeout Maximum wait time in seconds.
+     * @return WebElement that was explicitly waited.
+     */
+    public WebElement waitForElementDisplayed (WebElement element, int timeout) {
+        WebDriverWait wait = new WebDriverWait(driver, timeout);
+        return wait.until(ExpectedConditions.visibilityOf(element));
+    }
+
+    public WebElement waitForElementDisplayed (WebElement element) {
+        return waitForElementDisplayed (element, 10);
     }
 
 }
