@@ -7,16 +7,18 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 /**
- * Description elements and methods at the home page
+ * Home page - page object, that extends from base page
  */
 public class HomePage extends BasePage{
 
     @FindBy (xpath = "//div[@id='main-site-nav']//a[@class='nav-link' and @href='/home?trk=nav_responsive_tab_home']")
     private WebElement homeMenuLink;
+
     @FindBy (id = "advanced-search")
-    private WebElement advansedButton;
+    private WebElement advansedSearchLink;
 
     /**
+     * Constructor for home page
      * @param driver
      */
     public HomePage(WebDriver driver) {
@@ -34,11 +36,11 @@ public class HomePage extends BasePage{
     }
 
     /**
-     * Click for button advansed.
+     * Click for link advanse search .
      * @return Search page, that we are switched to the another page advansed people search
      */
-    public SearchPage clickForAdvansedButton () {
-        advansedButton.click();
+    public SearchPage clickForAdvansedSearchLink () {
+        advansedSearchLink.click();
         return new SearchPage (driver);
     }
 }

@@ -4,6 +4,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+/**
+ * Login and registration pages - page object, that extends from base page
+ */
 public class LoginRegistrationPage extends BasePage{
 
     @FindBy(id = "reg-firstname")
@@ -33,13 +36,14 @@ public class LoginRegistrationPage extends BasePage{
     @FindBy (className = "alert-content")
     private WebElement errorMessageBox;
 
-
+    /**
+     * Constructor for login and registration page
+     * @param driver
+     */
     public LoginRegistrationPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
     }
-
-
     /**
      * Method for authorization at the linkedin
      * @param loginEmail user login for authorization at linkedin
@@ -53,7 +57,6 @@ public class LoginRegistrationPage extends BasePage{
         singInButton.click();
         return new HomePage(driver);
     }
-
     /**
      * Method for registration at the linkedin
      * @param firstName user name
@@ -69,7 +72,6 @@ public class LoginRegistrationPage extends BasePage{
         passwordField.sendKeys(password);
         joinNowButton.click();
     }
-
     /**
      * Get text from error box
      * @return String from error box
@@ -77,6 +79,4 @@ public class LoginRegistrationPage extends BasePage{
     public String getErrorMessageText (){
         return errorMessageBox.getText();
     }
-
-
 }

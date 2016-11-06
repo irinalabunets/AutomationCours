@@ -4,7 +4,7 @@ import page.HomePage;
 import page.LoginRegistrationPage;
 
 /**
- * Test for login and registration at the linkedin
+ * Class wiht all login and registration tests at the linkedin
  */
 public class LoginRegistrationTests extends BaseTest{
 
