@@ -1,5 +1,6 @@
 package page;
 
+import org.apache.xpath.operations.String;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -12,18 +13,6 @@ public class BasePage {
     public BasePage (WebDriver driver) {
 
         this.driver = driver;
-    }
-
-    public void openPageURL (String URL){
-        driver.get(URL);
-    }
-
-    /**
-     * Gets current Browser URL.
-     * @return String with current URL value.
-     */
-    public String getCurrentURL () {
-       return driver.getCurrentUrl();
     }
 
     /**
