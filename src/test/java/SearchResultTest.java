@@ -5,7 +5,7 @@ import page.LoginRegistrationPage;
 import page.SearchPage;
 
 /**
- * Class wiht all result of search tests
+ * Class with all result of search tests
  */
 public class SearchResultTest extends BaseTest{
 
@@ -20,14 +20,8 @@ public class SearchResultTest extends BaseTest{
 
         SearchPage searchPage = homePage.clickForAdvansedSearchLink();
         searchPage.searchByKeywordAndSubmit("HR");
-        //Assert.assertTrue(searchPage.isListOfSearchResultLoaded());
         Assert.assertEquals(searchPage.getSearchResultsOnPageCount(), 10, "Actual results on page number is wrong");
-        //searchPage.getSearchCount();
         searchPage.getDescriptionStringList();
-
-        //searchPage.varificationThatSearchWorldAtTheList();
-        //Assert.assertEquals(searchPage.varificationThatSearchWorldAtTheList(),"HR", "Expected that search word was not found on page");
-
 
     }
 }
