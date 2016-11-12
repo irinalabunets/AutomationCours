@@ -59,8 +59,8 @@ public class SearchPage extends BasePage{
     }
 
     /**
-     * Get description from title and convert list of webelements
-     * @return
+     * Get description from title and convert list of web elements in list of string
+     * @return string list description search result
      */
     public List<String> getDescriptionStringList () {
         List<String> searchResultDescriptionStringList = new ArrayList<String>();

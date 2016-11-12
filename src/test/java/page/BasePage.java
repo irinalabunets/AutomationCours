@@ -1,12 +1,14 @@
 package page;
 
-import org.apache.xpath.operations.String;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
+/**
+ * Base page where describe the main things to the other pages
+ */
 public class BasePage {
     protected WebDriver driver;
 
