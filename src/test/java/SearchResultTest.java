@@ -13,6 +13,9 @@ public class SearchResultTest extends BaseTest {
 
     public HomePage homePage;
 
+    /**
+     * The same operations for all tests, for class search result it is login in linkedin
+     */
     @BeforeClass
     public void beforeTest(){
         LoginRegistrationPage loginRegistrationPage = new LoginRegistrationPage(getDriver());
@@ -20,6 +23,10 @@ public class SearchResultTest extends BaseTest {
         Assert.assertTrue(homePage.isPageLoaded());
     }
 
+    /**
+     * List of search terms that will be used in the test
+     * @return keywords for different searching
+     */
     @DataProvider(name = "searchTerms")
     public Object[][] searchTermsData(){
         return new Object[][] {
@@ -28,14 +35,14 @@ public class SearchResultTest extends BaseTest {
         };
     }
     /**
-     * Search by keyword HR
+     * Search by keyword and check that result by keyword is displayed on the page
      */
     @Test (dataProvider = "searchTerms")
     public void searchForKeyword (String searchTerms, String expectedContainedTerm) {
         SearchPage searchPage = homePage.clickForAdvansedSearchLink();
         searchPage.searchByKeywordAndSubmit(searchTerms);
         Assert.assertEquals(searchPage.getSearchResultsOnPageCount(), 10, "Actual results on page number is wrong");
-        //searchPage.getDescriptionStringList();
-        Assert.assertTrue(searchPage.getDescriptionStringList().get(0).contains(expectedContainedTerm), "Expected search term is not found in result list");
+        //Assert.assertTrue(searchPage.getDescriptionStringList().get(0).contains(expectedContainedTerm), "Expected search term is not found in result list");
+        Assert.assertTrue(searchPage.Title(expectedContainedTerm), "Expected search term is not found in result list");
     }
 }

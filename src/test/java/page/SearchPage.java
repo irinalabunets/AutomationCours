@@ -43,11 +43,10 @@ public class SearchPage extends BasePage{
      * @param keyword String search word
      */
     public void searchByKeywordAndSubmit (String keyword) {
-
+        keywordsField.clear();
         keywordsField.sendKeys(keyword);
         searchButton.click();
         waitUntilElementDisplayed(resuilsForInfoText);
-        System.out.print(searchResultDescriptionsList.get(0).getText());
     }
 
     /**
@@ -69,5 +68,14 @@ public class SearchPage extends BasePage{
             searchResultDescriptionStringList.add(searchResultDescriptionElement.getText());
         }
         return searchResultDescriptionStringList;
+    }
+
+    public boolean Title (String searchTerm) {
+        List<String> searchResultDescriptionStringList = new ArrayList<String>();
+        for (int i=0; i<searchResultDescriptionStringList.size(); i++){
+            if(!searchResultDescriptionStringList.get(i).contains(searchTerm))
+                return false;
+        }
+        return true;
     }
 }

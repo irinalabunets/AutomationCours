@@ -65,9 +65,11 @@ public class LoginRegistrationPage extends BasePage{
      * @param password user password
      */
     public void registrationFormFillAndSubmit(String firstName, String lastName, String email, String password) {
-
+        firstNameField.clear();
         firstNameField.sendKeys(firstName);
+        lastNameField.clear();
         lastNameField.sendKeys(lastName);
+        emailField.clear();
         emailField.sendKeys(email);
         passwordField.sendKeys(password);
         joinNowButton.click();
