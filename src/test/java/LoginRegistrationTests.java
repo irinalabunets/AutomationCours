@@ -47,7 +47,7 @@ public class LoginRegistrationTests extends BaseTest{
      * @param firstNameForRegistration value for first name, user enter his first name
      * @param lastNameForRegistration value for last name, user enter his last name
      * @param emailForRegistration value for email, user enter his email
-     * @param expectedErrorMassage error massage 
+     * @param expectedErrorMassage error massage
      */
     @Test (dataProvider = "dataForRegistration")
     public void errorMassagesFromRegistrationForm(String firstNameForRegistration, String lastNameForRegistration, String emailForRegistration, String expectedErrorMassage){

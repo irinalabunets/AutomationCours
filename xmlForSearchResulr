@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sute name = "All_Tests_SearchResult">
+    <test name = "SearchResult">
+        <classed>
+            <class name = "beforeTest"/>
+            <class name = "searchForKeyword"/>
+        </classed>>
+    </test>
+</sute>
