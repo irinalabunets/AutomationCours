@@ -70,6 +70,11 @@ public class SearchPage extends BasePage{
         return searchResultDescriptionStringList;
     }
 
+    /**
+     * Check information in title
+     * @param searchTerm keyword for search
+     * @return list of title
+     */
     public boolean Title (String searchTerm) {
         List<String> searchResultDescriptionStringList = new ArrayList<String>();
         for (int i=0; i<searchResultDescriptionStringList.size(); i++){

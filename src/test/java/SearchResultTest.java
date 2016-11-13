@@ -42,7 +42,6 @@ public class SearchResultTest extends BaseTest {
         SearchPage searchPage = homePage.clickForAdvansedSearchLink();
         searchPage.searchByKeywordAndSubmit(searchTerms);
         Assert.assertEquals(searchPage.getSearchResultsOnPageCount(), 10, "Actual results on page number is wrong");
-        //Assert.assertTrue(searchPage.getDescriptionStringList().get(0).contains(expectedContainedTerm), "Expected search term is not found in result list");
         Assert.assertTrue(searchPage.Title(expectedContainedTerm), "Expected search term is not found in result list");
     }
 }

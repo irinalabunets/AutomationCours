@@ -2,8 +2,8 @@
 <sute name = "All_Tests_SearchResult">
     <test name = "SearchResult">
         <classed>
+            <class name = "SearchResultTest"/>
             <class name = "beforeTest"/>
-            <class name = "searchForKeyword"/>
         </classed>>
     </test>
 </sute>

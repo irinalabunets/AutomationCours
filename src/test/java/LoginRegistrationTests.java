@@ -34,7 +34,7 @@ public class LoginRegistrationTests extends BaseTest{
     @DataProvider(name = "dataForRegistration")
     public Object[][] dataForRegistration(){
         return new Object[][] {
-                { "","", "","Укажите имя"},
+                { "","","","Укажите имя"},
                 { "irina","hhhhhh", "", "Укажите действительную фамилию" },
                 { "irina","", "", "Укажите фамилию" },
                 { "irina","labunets", "", "Укажите свой адрес электронной почты" },

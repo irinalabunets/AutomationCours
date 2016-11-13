@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-    <sute name = "All_Tests_ForLoginAndRegistration">
-        <test name = "LoginRegistration">
-         <classed>
-             <class name = "errorMassageForRegistrationForm"/>
-             <class name = "successfulLoginTest"/>
-         </classed>>
-        </test>
-    </sute>
+<sute name = "All_Tests_ForLoginAndRegistration">
+<test name = "LoginRegistration">
+    <classed>
+        <class name = "LoginRegistrationTests"/>
+    </classed>>
+</test>
+</sute>
